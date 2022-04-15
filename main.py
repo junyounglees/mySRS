@@ -10,8 +10,8 @@ firebase_admin.initialize_app(cred)
 
 db = firestore.client()
 
-users_ref = db.collection(u'product')
-docs = users_ref.stream()
+data = {
+}
 
-for doc in docs:
-    print(f'{doc.id} => {doc.to_dict()}')
+card_type = db.collection(u'card type').document(
+    u'cloze').collection(u'Field').document('3').set(data)
